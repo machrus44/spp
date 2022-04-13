@@ -1,0 +1,56 @@
+extends ../layout/base 
+block content 
+	section.content-header 
+		h1 
+			| Tambah Data Pegawai
+			small 
+		ol.breadcrumb 
+			li 
+				a(href='#') 
+					i.fa.fa-dashboard
+					| Level 
+			li.active Here 
+	section.content
+		.box
+			.box-header.with-border
+				h3.box-title
+					| Data Pegawai
+				.box-tools.pull-right
+					button(type='button', data-widget='collapse', data-toggle='tooltip',title='collapse').btn.btn-box-tool
+						i.fa.fa-minus
+					
+			.box-body
+				form(role='form',method='post' action='/pegawai/add')
+					.row
+						
+						.col-xs-6
+							.box-body
+								- if (messages.msg_error) 
+									.alert.alert-danger.alert-dismissable 
+										button.close(type='button', data-dismiss='alert', aria-hidden='true') 
+											| ×
+										h4
+											i.icon.fa.fa-ban
+											| Alert! 
+										| !{messages.msg_error}
+								.form-group
+									label
+										| Nama
+									input(type='text',value='#{nama}',name='nama',placeholder='Masukkan Nama', autofocus).form-control
+								.form-group
+									label
+										| Alamat
+									input(type='text',name='alamat',placeholder='Masukkan Alamat').form-control
+								.form-group
+									label
+										| Hp
+									input(type='text',value='#{hp}',name='hp',placeholder='Masukkan Nomor HP').form-control
+								.form-group
+									label
+										| Kode Pegawai
+									input(type='text',name='kode_pegawai',placeholder='Masukkan Kode Pegawai').form-control
+							.box-footer
+								button(type='submit').btn.btn-primary
+									| Submit
+								a(href='/pegawai').btn.btn-primary.pull-right
+									| Back
