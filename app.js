@@ -44,7 +44,7 @@ app.use(
         host: 'bhpf4zcqztf9ryistth0-mysql.services.clever-cloud.com',
         user: 'upwubognzvigw8yb', // your mysql user
         password : 'clHLCsJ5gkeSLCWT2wg5', // your mysql password
-        port : 3307, //port mysql
+        port : 3306, //port mysql
         database:'bhpf4zcqztf9ryistth0' // your database name
     },'pool') //or single
 );
